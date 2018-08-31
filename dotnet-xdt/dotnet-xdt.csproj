@@ -12,6 +12,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <LangVersion>latest</LangVersion>
     <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
     <OutputType>Exe</OutputType>
     
     <RootNamespace>DotNet.Xdt</RootNamespace>
