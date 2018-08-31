@@ -50,14 +50,16 @@
     <PackageReleaseNotes>$(_ReleaseNotes)</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/nil4/dotnet-transform-xdt</PackageProjectUrl>
     <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/nil4/dotnet-transform-xdt.git</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <MinClientVersion>4.0</MinClientVersion>
 
     <!-- Disable 'The package uses SemVer 2.0.0' warning; https://github.com/NuGet/Home/issues/4687 -->
     <NoWarn>NU5105</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup Label="SourceLink">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-62925-02" PrivateAssets="All" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Program.cs" Condition=" '$(OutputType)' != 'Exe' " />
