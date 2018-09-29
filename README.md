@@ -14,7 +14,7 @@ is that you can use the same command, for both installation and usage, across al
 Install `dotnet-xdt` as a global tool (only once):
 
 ```cmd
-dotnet tool install --global dotnet-xdt --version 2.1.1h
+dotnet tool install --global dotnet-xdt --version 2.1.1
 ```
 
 And then you can apply XDT transforms, from the command-line, anywhere on your PC, e.g.:
