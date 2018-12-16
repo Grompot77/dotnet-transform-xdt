@@ -51,7 +51,7 @@
     <PackageTags>$(_PackageTags);xdt;transform;xml</PackageTags>
     <PackageReleaseNotes>$(_ReleaseNotes)</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/nil4/dotnet-transform-xdt</PackageProjectUrl>
-    <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <MinClientVersion>4.0</MinClientVersion>
 
