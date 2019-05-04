@@ -1,6 +1,5 @@
 using System.Xml;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     public class XmlTransformableDocument : XmlFileInfoDocument, IXmlOriginalDocumentService

@@ -5,7 +5,6 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     static class Program

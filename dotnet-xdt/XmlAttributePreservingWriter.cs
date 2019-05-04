@@ -5,7 +5,6 @@ using System.IO;
 using System.Diagnostics;
 using System.Globalization;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     class XmlAttributePreservingWriter : XmlWriter

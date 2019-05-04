@@ -12,6 +12,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Features>strict</Features>
     <LangVersion>8.0</LangVersion>
+    <NullableContextOptions>enable</NullableContextOptions>
     <DebugType>embedded</DebugType>
     <OutputType>Exe</OutputType>
     

@@ -3,9 +3,10 @@
     <TargetFrameworks>netcoreapp2.1;net461</TargetFrameworks>
     <IsPackable>false</IsPackable>
     <IsPublishable>false</IsPublishable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Features>strict</Features>
     <LangVersion>8.0</LangVersion>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NullableContextOptions>enable</NullableContextOptions>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Resources\**\*.*" />

@@ -2,7 +2,6 @@ using System;
 using System.Xml;
 using System.Globalization;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     sealed class DefaultLocator : Locator

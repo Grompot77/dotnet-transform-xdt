@@ -1,7 +1,6 @@
 using System.Text;
 using System.IO;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     class PositionTrackingTextReader : TextReader

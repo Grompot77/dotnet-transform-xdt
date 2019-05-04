@@ -2,7 +2,6 @@ using System;
 using System.Xml;
 using System.Runtime.Serialization;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     [Serializable]

@@ -4,7 +4,6 @@ using System.Xml;
 using System.Diagnostics;
 using System.IO;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     class XmlAttributePreservationDict

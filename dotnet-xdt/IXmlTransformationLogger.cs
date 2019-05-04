@@ -1,6 +1,5 @@
 using System;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     public enum MessageType

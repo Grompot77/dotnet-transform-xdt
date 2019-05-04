@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     static class XmlArgumentUtility

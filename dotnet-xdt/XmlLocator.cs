@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Diagnostics;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     enum XPathAxis

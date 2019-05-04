@@ -4,7 +4,6 @@ using System.Text;
 using System.Xml;
 using System.IO;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     public class XmlFileInfoDocument : XmlDocument, IDisposable

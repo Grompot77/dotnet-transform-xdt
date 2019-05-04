@@ -5,7 +5,6 @@ using System.Text.RegularExpressions;
 using System.Diagnostics;
 using System.IO;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     class XmlElementContext : XmlNodeContext

@@ -4,7 +4,6 @@ using System.Xml;
 using System.Diagnostics;
 using System.Globalization;
 
-#nullable enable
 namespace DotNet.Xdt
 {
     interface IXmlFormattableAttributes
