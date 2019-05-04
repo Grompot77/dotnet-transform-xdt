@@ -10,8 +10,8 @@
     <TargetFrameworks Condition=" '$(As)' == 'tool' ">$(_ToolTFM)</TargetFrameworks>
 
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <LangVersion>latest</LangVersion>
     <Features>strict</Features>
+    <LangVersion>8.0</LangVersion>
     <DebugType>embedded</DebugType>
     <OutputType>Exe</OutputType>
     

@@ -2,14 +2,15 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Diagnostics;
 
+#nullable enable
 namespace DotNet.Xdt
 {
     abstract class AttributeTransform : Transform
     {
-        XmlNode _transformAttributeSource;
-        XmlNodeList _transformAttributes;
-        XmlNode _targetAttributeSource;
-        XmlNodeList _targetAttributes;
+        XmlNode? _transformAttributeSource;
+        XmlNodeList? _transformAttributes;
+        XmlNode? _targetAttributeSource;
+        XmlNodeList? _targetAttributes;
 
         protected AttributeTransform()
             : base(TransformFlags.ApplyTransformToAllTargetNodes)

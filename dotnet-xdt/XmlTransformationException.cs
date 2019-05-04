@@ -1,5 +1,6 @@
 using System;
 
+#nullable enable
 namespace DotNet.Xdt
 {
     // This doesn't do anything, except mark an error as having come from the transformation engine

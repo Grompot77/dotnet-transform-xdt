@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Diagnostics;
 
+#nullable enable
 namespace DotNet.Xdt
 {
     enum XPathAxis
@@ -22,25 +23,25 @@ namespace DotNet.Xdt
 
     abstract class Locator
     {
-        IList<string> _arguments;
-        string _parentPath;
-        XmlElementContext _context;
-        XmlTransformationLogger _logger;
+        IList<string>? _arguments;
+        string? _parentPath;
+        XmlElementContext? _context;
+        XmlTransformationLogger? _logger;
 
-        protected virtual string ParentPath => _parentPath;
+        protected virtual string ParentPath => _parentPath!;
 
-        protected XmlNode CurrentElement => _context.Element;
+        protected XmlNode? CurrentElement => _context?.Element;
 
         protected virtual string NextStepNodeTest 
-            => !string.IsNullOrEmpty(CurrentElement.NamespaceURI) && string.IsNullOrEmpty(CurrentElement.Prefix) 
+            => !string.IsNullOrEmpty(CurrentElement?.NamespaceURI) && string.IsNullOrEmpty(CurrentElement.Prefix) 
                 ? string.Concat("_defaultNamespace:", CurrentElement.LocalName) 
-                : CurrentElement.Name;
+                : CurrentElement!.Name;
 
         protected virtual XPathAxis NextStepAxis 
             => XPathAxis.Child;
 
         protected virtual string ConstructPath() 
-            => AppendStep(ParentPath, NextStepAxis, NextStepNodeTest, ConstructPredicate());
+            => AppendStep(ParentPath!, NextStepAxis, NextStepNodeTest, ConstructPredicate());
 
         protected string AppendStep(string basePath, string stepNodeTest) 
             => AppendStep(basePath, XPathAxis.Child, stepNodeTest, string.Empty);
@@ -54,31 +55,31 @@ namespace DotNet.Xdt
         protected string AppendStep(string basePath, XPathAxis stepAxis, string stepNodeTest, string predicate)
         {
             return string.Concat(
-            EnsureTrailingSlash(basePath), 
-            GetAxisString(stepAxis), 
-            stepNodeTest, 
-            EnsureBracketedPredicate(predicate));
+                EnsureTrailingSlash(basePath), 
+                GetAxisString(stepAxis), 
+                stepNodeTest, 
+                EnsureBracketedPredicate(predicate));
         }
 
         protected virtual string ConstructPredicate() => string.Empty;
 
-        protected XmlTransformationLogger Log
+        protected XmlTransformationLogger? Log
         {
             get
             {
                 if (_logger == null)
                 {
-                    _logger = _context.GetService<XmlTransformationLogger>();
+                    _logger = _context?.GetService<XmlTransformationLogger>();
                     if (_logger != null)
-                        _logger.CurrentReferenceNode = _context.LocatorAttribute;
+                        _logger.CurrentReferenceNode = _context!.LocatorAttribute;
                 }
                 return _logger;
             }
         }
 
-        protected string ArgumentString { get; private set; }
+        protected string? ArgumentString { get; private set; }
 
-        protected IList<string> Arguments
+        protected IList<string>? Arguments
         {
             get
             {
@@ -107,11 +108,11 @@ namespace DotNet.Xdt
 
             EnsureArguments(min);
 
-            if (Arguments.Count > max)
+            if (Arguments?.Count > max)
                 throw new XmlTransformationException(string.Format(System.Globalization.CultureInfo.CurrentCulture, SR.XMLTRANSFORMATION_TooManyArguments, GetType().Name));
         }
 
-        internal string ConstructPath(string parentPath, XmlElementContext context, string argumentString)
+        internal string ConstructPath(string parentPath, XmlElementContext context, string? argumentString)
         {
             Debug.Assert(_parentPath == null && _context == null && ArgumentString == null,
                 "Do not call ConstructPath recursively");
@@ -142,7 +143,7 @@ namespace DotNet.Xdt
             return resultPath;
         }
 
-        internal string ConstructParentPath(string parentPath, XmlElementContext context, string argumentString)
+        internal string ConstructParentPath(string parentPath, XmlElementContext context, string? argumentString)
         {
             Debug.Assert(_parentPath == null && _context == null && ArgumentString == null,
                 "Do not call ConstructPath recursively");
@@ -157,7 +158,7 @@ namespace DotNet.Xdt
                     _context = context;
                     ArgumentString = argumentString;
 
-                    resultPath = ParentPath;
+                    resultPath = ParentPath!;
                 }
                 finally
                 {

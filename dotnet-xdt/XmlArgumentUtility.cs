@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+#nullable enable
 namespace DotNet.Xdt
 {
     static class XmlArgumentUtility
@@ -27,7 +28,7 @@ namespace DotNet.Xdt
         static IList<string> RecombineArguments(IList<string> arguments, char separator)
         {
             var combinedArguments = new List<string>();
-            string combinedArgument = null;
+            string? combinedArgument = null;
             var parenCount = 0;
 
             foreach (string argument in arguments)

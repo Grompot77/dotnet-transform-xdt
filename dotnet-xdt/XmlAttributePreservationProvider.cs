@@ -3,6 +3,7 @@ using System.Text;
 using System.IO;
 using System.Diagnostics;
 
+#nullable enable
 namespace DotNet.Xdt
 {
     class XmlAttributePreservationProvider : IDisposable
@@ -16,7 +17,7 @@ namespace DotNet.Xdt
             _reader = new PositionTrackingTextReader(_streamReader);
         }
 
-        public XmlAttributePreservationDict GetDictAtPosition(int lineNumber, int linePosition)
+        public XmlAttributePreservationDict? GetDictAtPosition(int lineNumber, int linePosition)
         {
             if (_reader.ReadToPosition(lineNumber, linePosition))
             {

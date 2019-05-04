@@ -2,13 +2,14 @@ using System;
 using System.Xml;
 using System.Runtime.Serialization;
 
+#nullable enable
 namespace DotNet.Xdt
 {
     [Serializable]
     public sealed class XmlNodeException : XmlTransformationException
     {
-        readonly XmlFileInfoDocument _document;
-        readonly IXmlLineInfo _lineInfo;
+        readonly XmlFileInfoDocument? _document;
+        readonly IXmlLineInfo? _lineInfo;
 
         // If this is already an XmlNodeException, then it probably
         // got its node closer to the error, making it more accurate
@@ -31,7 +32,7 @@ namespace DotNet.Xdt
 
         public bool HasErrorInfo => _lineInfo != null;
 
-        public string FileName => _document?.FileName;
+        public string? FileName => _document?.FileName;
 
         public int LineNumber => _lineInfo?.LineNumber ?? 0;
 
