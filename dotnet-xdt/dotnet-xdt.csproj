@@ -14,15 +14,16 @@
     <LangVersion>8.0</LangVersion>
     <NullableContextOptions>enable</NullableContextOptions>
     <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
     <OutputType>Exe</OutputType>
-    
+
     <RootNamespace>DotNet.Xdt</RootNamespace>
     <AssemblyName>dotnet-xdt</AssemblyName>
 
-    <FileVersion>2.1.0</FileVersion>
+    <FileVersion>2.1.1</FileVersion>
     <Version>$(FileVersion)</Version>
-    
-    <_ReleaseNotes>Use `dotnet-xdt` as a .NET Core 2.1 global tool, or standalone .NET 4.6.1 executable. Reference `DotNet.Xdt` as a .NET Standard 2.0 library.</_ReleaseNotes>
+
+    <_ReleaseNotes>Enable [SourceLink](https://github.com/dotnet/sourcelink#readme) for access to original source code while debugging.</_ReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Label="Library" Condition=" '$(TargetFrameworks)' == '$(_LibTFM)' ">
@@ -58,6 +59,10 @@
     <MinClientVersion>4.0</MinClientVersion>
   </PropertyGroup>
 
+  <ItemGroup Label="SourceLink">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-63127-02" PrivateAssets="All" />
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Remove="Program.cs" Condition=" '$(OutputType)' != 'Exe' " />
 
@@ -65,7 +70,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    
+
     <Compile Update="SR.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
